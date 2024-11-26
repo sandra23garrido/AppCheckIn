@@ -1,0 +1,75 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar id="cabeza">
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" id="boton">
+        <ion-icon slot="start" name="menu-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: left;">
+      Registro de clase
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarsesion()" fill="outline" id="margenb" id="boton" >Cerrar Sesion</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+
+    <ion-card-title id="marginl">Seleccione Asigantura</ion-card-title>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-select label="Asignaturas" label-placement="floating" [(ngModel)]="selectedOption" (ionChange)="onSelectChange($event)">
+            <ion-select-option value="0">{{asignaturaUno}}</ion-select-option>
+            <ion-select-option value="1">{{asignaturaDos}}</ion-select-option>
+            <ion-select-option value="2">{{asignaturaTres}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+     </ion-card-content>
+
+     <ion-card-content>
+     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="center-conteiner">
+        <img [src]="imagen" class="d-block w-100" alt="Imagen 1" id="carrusel">
+      </div>
+      <ion-text id="texto">
+        <h1>{{descripcion}}</h1>
+      </ion-text>
+    </div>
+    </ion-card-content>
+    
+    <div style="text-align: center;">
+      <ion-button fill="solid" shape="round" id="botones" (click)="generarQr()">
+        Generar QR
+      </ion-button>
+    </div>
+  </ion-card>
+  <ion-card class="center-conteiner">
+    <ion-card-content>
+      <qrcode [qrdata]=qrdata [width]="256" [errorCorrectionLevel]="'M'"> </qrcode>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar id="cabeza">
+    <ion-title>DuocUC</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" href="https://www.instagram.com/duocuc_cl/?hl=es" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear" href="https://web.facebook.com/DuocUC/?locale=es_LA&_rdc=1&_rdr" target="_blank">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear" href="https://x.com/DuocUC?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

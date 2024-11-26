@@ -1,0 +1,48 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar id="cabeza">
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" id="boton">
+        <ion-icon slot="start" name="menu-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: left;">
+      Inicio
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarsesion()" fill="outline" id="margenb" id="boton" >Cerrar Sesion</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="center-conteiner">
+        <img [src]="imagen" class="d-block w-100" alt="Imagen 1" id="carrusel">
+      </div>
+
+
+      <ion-button id="modificar2" fill="clear" shape="round" class="center-conteiner" (click)="carrusel()">
+        Siguiente
+      </ion-button>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar id="cabeza">
+    <ion-title>DuocUC</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" href="https://www.instagram.com/duocuc_cl/?hl=es" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear" href="https://web.facebook.com/DuocUC/?locale=es_LA&_rdc=1&_rdr" target="_blank">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear" href="https://x.com/DuocUC?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
