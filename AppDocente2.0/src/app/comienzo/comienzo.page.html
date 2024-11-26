@@ -1,0 +1,91 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar id="cabeza">
+      <ion-title style="text-align: left;">
+        Ingreso
+      </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="redireccion()" fill="outline" id="margenb" id="boton" >Registrarse</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ingresar</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <form [formGroup]="loginForm">  
+        <ion-item>
+          <ion-input type="text" placeholder="Username"
+            label="Nombre de usuario:" labelPlacement="floating"
+            formControlName="username"></ion-input>
+        </ion-item>
+        <div id="alerta" *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || 
+        loginForm.get('username')?.touched)">
+          <div id="alerta" *ngIf="loginForm.get('username')?.hasError('required')">
+            *Username es obligatorio
+          </div>
+          <div id="alerta" *ngIf="loginForm.get('username')?.hasError('minlength')">
+            *Username debe tener mínimo 6 caracteres
+          </div>
+        </div>
+        <ion-item>
+          <ion-input type="password" placeholder="Password"
+            label="Contraseña:" labelPlacement="floating"
+            formControlName="password"></ion-input>
+        </ion-item>
+       
+        <div id="alerta" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || 
+                loginForm.get('password')?.touched)">
+          <div id="alerta" *ngIf="loginForm.get('password')?.hasError('required')">
+            *Password es obligatoria
+          </div>
+          <div id="alerta" *ngIf="loginForm.get('password')?.hasError('minlength')">
+            *Password debe tener mínimo 8 caracteres
+          </div>
+        </div>
+
+      <ion-button id="recuperar-pass" fill="clear" shape="round">
+        Recuperar contraseña
+      </ion-button>
+      <ion-alert
+        trigger="recuperar-pass"
+        header="Ingresar correo para recuperar contraseña"
+        [buttons]="alertButtons"
+        [inputs]="alertInputs">
+      </ion-alert>
+    </form>
+    </ion-card-content>
+    
+
+    <div style="text-align: center;">
+      <ion-button (click)="login()" [disabled]="!loginForm.valid" fill="solid" shape="round" id="botones">
+        Ingresar
+      </ion-button>
+    </div>
+
+   </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar id="cabeza">
+    <ion-title>DuocUC</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" href="https://www.instagram.com/duocuc_cl/?hl=es" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear" href="https://web.facebook.com/DuocUC/?locale=es_LA&_rdc=1&_rdr" target="_blank">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear" href="https://x.com/DuocUC?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

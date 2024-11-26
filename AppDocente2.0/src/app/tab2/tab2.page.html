@@ -1,0 +1,93 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar id="cabeza">
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()" id="boton">
+        <ion-icon slot="start" name="menu-outline" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Gestión de clases
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarsesion()" fill="outline" id="margenb" id="boton" >Cerrar Sesion</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Selecione Periodo academico</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-select label="Periodo" label-placement="floating">
+            <ion-select-option value="periodo 1">1er Semestre</ion-select-option>
+            <ion-select-option value="periodo 2">2do Semestre</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+     </ion-card-content>
+
+    <ion-card-title id="marginl">Seleccione Asigantura</ion-card-title>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-select label="Asignaturas" label-placement="floating">
+            <ion-select-option value="asignatura 1">Asignatura 1</ion-select-option>
+            <ion-select-option value="asignatura 2">Asignatura 2</ion-select-option>
+            <ion-select-option value="asignatura 3">Asignatura 3</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+     </ion-card-content>
+      <ion-card-content>
+        <ion-item>
+          <ion-textarea [readonly]="true" label="Sala: " placeholder="sala..."></ion-textarea>>
+        </ion-item>
+      </ion-card-content>
+
+      <ion-card-content>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-card-content>
+
+     
+
+
+    <div style="text-align: center;">
+      <ion-button fill="solid" shape="round" id="botones">
+        Escanear QR
+      </ion-button>
+    </div>
+    
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar id="cabeza">
+    <ion-title>DuocUC</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" href="https://www.instagram.com/duocuc_cl/?hl=es" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear" href="https://web.facebook.com/DuocUC/?locale=es_LA&_rdc=1&_rdr" target="_blank">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear" href="https://x.com/DuocUC?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

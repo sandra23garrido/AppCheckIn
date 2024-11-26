@@ -1,0 +1,44 @@
+<ion-app>
+
+  <ion-menu contentId="main" menuId="first" side="start" type="overlay" [disabled]="true">
+    <ion-header>
+      <ion-toolbar id="cabeza">
+        <ion-icon slot="start" name="ellipsis-vertical-outline" size="large" style="padding-left: 15px;"></ion-icon>
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-menu-toggle *ngFor="let i of menu">
+        <ion-item [routerLink]="i.redirecTo" detail="true">
+          <ion-icon slot="start" [name]="i.icon" color="dark"></ion-icon>
+          <ion-label>{{i.name}}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-content>
+
+    <ion-footer>
+      <ion-toolbar id="cabeza">
+        <ion-title>DuocUC</ion-title>
+        <ion-buttons slot="end">
+          <ion-button fill="clear" href="https://www.instagram.com/duocuc_cl/?hl=es" target="_blank">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </ion-button>
+    
+          <ion-button fill="clear" href="https://web.facebook.com/DuocUC/?locale=es_LA&_rdc=1&_rdr" target="_blank">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </ion-button>
+    
+          <ion-button fill="clear" href="https://x.com/DuocUC?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </ion-button>
+    
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
+
+  </ion-menu>
+
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

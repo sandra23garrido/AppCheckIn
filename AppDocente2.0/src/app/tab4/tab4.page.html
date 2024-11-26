@@ -1,0 +1,130 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar id="cabeza">
+
+    <ion-title>
+      Registrarse
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ingrese sus datos</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="registroForm" >  
+        <ion-item>
+          <ion-input type="text" placeholder="Nombre completo"
+            label="Nombre :" labelPlacement="floating"
+            formControlName="username" ></ion-input>
+        </ion-item>
+        <div id="alerta" *ngIf="registroForm.get('username')?.invalid && (registroForm.get('username')?.dirty || 
+        registroForm.get('username')?.touched)">
+          <div id="alerta" *ngIf="registroForm.get('username')?.hasError('required')">
+            *Nombre es obligatorio
+          </div>
+          <div id="alerta" *ngIf="registroForm.get('username')?.hasError('minlength')">
+            *Nombre debe tener mínimo 6 caracteres
+          </div>
+        </div>
+
+        <ion-item>
+          <ion-input type="text" placeholder="Ingrese rut sin punto ni guión"
+            label="Rut :" labelPlacement="floating"
+            formControlName="rut"></ion-input>
+        </ion-item>
+        <div id="alerta" *ngIf="registroForm.get('rut')?.invalid && (registroForm.get('rut')?.dirty || 
+        registroForm.get('rut')?.touched)">
+          <div id="alerta" *ngIf="registroForm.get('rut')?.hasError('required')">
+            *Rut es obligatorio
+          </div>
+          <div id="alerta" *ngIf="registroForm.get('rut')?.hasError('minlength')">
+            *Rut debe tener mínimo 8 caracteres
+          </div>
+        </div>
+
+        <ion-item>
+          <ion-input type="email" placeholder="Correo..."
+            label="Correo:" labelPlacement="floating"
+            formControlName="email"></ion-input>
+        </ion-item>
+       
+        <div id="alerta" *ngIf="registroForm.get('email')?.invalid && (registroForm.get('email')?.dirty || 
+                registroForm.get('email')?.touched)">
+          <div id="alerta" *ngIf="registroForm.get('email')?.hasError('required')">
+            *Correo es obligatoria
+          </div>
+          <div id="alerta" *ngIf="registroForm.get('email')?.hasError('email')">
+            *Ingrese un correo valido
+          </div>
+        </div>
+
+        <ion-item>
+          <ion-input type="password" placeholder="Password"
+            label="Contraseña:" labelPlacement="floating"
+            formControlName="password"></ion-input>
+        </ion-item>
+       
+        <div id="alerta" *ngIf="registroForm.get('password')?.invalid && (registroForm.get('password')?.dirty || 
+                registroForm.get('password')?.touched)">
+          <div id="alerta" *ngIf="registroForm.get('password')?.hasError('required')">
+            *Password es obligatoria
+          </div>  
+          <div id="alerta" *ngIf="registroForm.get('password')?.hasError('minlength')">
+            *Password debe tener mínimo 8 caracteres
+          </div>
+        </div>
+
+        <ion-item>
+          <ion-input type="text" placeholder="Direccion"
+            label="Direccion:" labelPlacement="floating"
+            formControlName="direccion"></ion-input>
+        </ion-item>
+       
+        <div id="alerta" *ngIf="registroForm.get('direccion')?.invalid && (registroForm.get('direccion')?.dirty || 
+                registroForm.get('direccion')?.touched)">
+          <div id="alerta" *ngIf="registroForm.get('direccion')?.hasError('required')">
+            *direccion es obligatoria
+          </div>  
+          <div id="alerta" *ngIf="registroForm.get('direccion')?.hasError('minlength')">
+            *direccion debe tener mínimo 4 caracteres
+          </div>
+        </div>
+
+      
+    </form>
+
+
+    </ion-card-content>
+
+    <div style="text-align: center;">
+      <ion-button fill="solid" shape="round" id="botones" (click)="registro()">
+        Confirmar
+      </ion-button>
+    </div>
+
+
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar id="cabeza">
+    <ion-title>DuocUC</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" href="https://www.instagram.com/duocuc_cl/?hl=es" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear" href="https://web.facebook.com/DuocUC/?locale=es_LA&_rdc=1&_rdr" target="_blank">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-button>
+
+      <ion-button fill="clear" href="https://x.com/DuocUC?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
