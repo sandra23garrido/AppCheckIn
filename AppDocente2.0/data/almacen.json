@@ -1,0 +1,31 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "username": "usuario1",
+      "rut": "112223334",
+      "email": "usuario1@mail.cl",
+      "password": "duoc1234",
+      "carrera": "informatica",
+      "isactive": true
+    },
+    {
+      "id": "2",
+      "username": "gonzalo",
+      "rut": "203373074",
+      "email": "gonzalo@duoc.com",
+      "password": "duoc1234",
+      "carrera": "informatica",
+      "isactive": true
+    },
+    {
+      "id": "21",
+      "nombre": "sandra",
+      "rut": "12345678",
+      "email": "sand.garrido@duocuc.cl",
+      "password": "12345678",
+      "direccion": "",
+      "isactive": "true"
+    }
+  ]
+}
